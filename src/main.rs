@@ -1,5 +1,9 @@
 // std::env receives user flags for specified command line values
 use std::env;
+/// # main()
+/// declares default array of bool values for the current array and the next array\
+/// the main goal is to overwrite the current row with the next and\
+/// utilize the Rule 110 mechanic to create perpuate the process for 10 rows
 fn main() {
     let mut _args = env::args().nth(1);
     let mut current: [bool; 8] = [true, false, true, false, false, true, false, false];
@@ -16,6 +20,9 @@ fn main() {
         current = next;
     }
 }
+/// ## rule110 (bits: [bool; 3]) -> bool
+/// matches the given boolean combination to a result value and returns the\
+/// new singular value according to the Rule 110 mechanic
 fn rule110(bits: [bool; 3]) -> bool {
     match bits {
         [true, true, true] => false,
@@ -28,7 +35,12 @@ fn rule110(bits: [bool; 3]) -> bool {
         [false, false, false] => false,
     }
 }
+/// ## print_row(row: [bool; 8])
+/// takes an array of booleans and matches each value:\
+/// if 1 then *\
+/// if 0 then .\
+/// then combines the values into a string and prints said string
 fn print_row(row: [bool; 8]) {
-    let row_string: String = row.iter().map(|&bit| if bit {'*'} else {'.'}).collect();
+    let row_string: String = row.iter().map(|&bit| if bit { '*' } else { '.' }).collect();
     println!("{}", row_string);
 }
