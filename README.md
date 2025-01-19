@@ -7,5 +7,6 @@
 ### cargo run
 ## Issue Comments:
 ### The only main issue i had was how to go about constructing the main function to process an array into a Rule110 combination, but then realized a match-case system would work fine
+### I also had to look up how to do the print_row process of mapping the bool values to a * or . and combining into a string to print
 ## Miscellaneous Comments:
 ### No Miscellaneous Comments as this is the first project.
