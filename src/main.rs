@@ -1,11 +1,8 @@
-// std::env receives user flags for specified command line values
-use std::env;
 /// # main()
 /// declares default array of bool values for the current array and the next array\
 /// the main goal is to overwrite the current row with the next and\
 /// utilize the Rule 110 mechanic to create perpuate the process for 10 rows
 fn main() {
-    let mut _args = env::args().nth(1);
     let mut current: [bool; 8] = [true, false, true, false, false, true, false, false];
     let mut next: [bool; 8] = [false; 8];
     print_row(current);
