@@ -41,3 +41,16 @@ fn print_row(row: [bool; 8]) {
     let row_string: String = row.iter().map(|&bit| if bit { '*' } else { '.' }).collect();
     println!("{}", row_string);
 }
+/// # Testing Area
+#[test]
+/// ## The only test i actually implemented was for the rule110 function as i didnt see a reason to do one for the print_row function
+fn test_rule110() -> () {
+    assert_eq!(rule110([true, true, true]), false);
+    assert_eq!(rule110([true, true, false]), true);
+    assert_eq!(rule110([true, false, true]), true);
+    assert_eq!(rule110([true, false, false]), false);
+    assert_eq!(rule110([false, true, true]), true);
+    assert_eq!(rule110([false, true, false]), true);
+    assert_eq!(rule110([false, false, true]), true);
+    assert_eq!(rule110([false, false, false]), false);
+}
